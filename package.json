@@ -1,0 +1,23 @@
+{
+  "name": "sd-grpc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paulo301/sd-grpc.git"
+  },
+  "author": "Paulo Victor Lemos de Almeida",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Paulo301/sd-grpc/issues"
+  },
+  "homepage": "https://github.com/Paulo301/sd-grpc#readme",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.3.5",
+    "@grpc/proto-loader": "^0.6.4"
+  }
+}

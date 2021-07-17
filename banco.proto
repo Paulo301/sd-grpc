@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package banco;
+
+message Transacao {
+  int32 codigo = 1;
+  float valor = 2;
+  string descricao = 3;
+  string data = 4;
+}
+
+message ListaDeTransacoes {
+  repeated Transacao transacoes = 1;
+}
+
+message DadosOperacao {
+  float valor = 1;
+  optional string nomeCaixa = 2;
+  optional string codigoConta = 3;
+  optional string nomeEstabelecimento = 4;
+}
+
+message Vazio { }
+
+service ServicoBancario {
+  rpc Saque (DadosOperacao) returns (Transacao);
+  rpc Deposito (DadosOperacao) returns (Transacao);
+  rpc Transferencia (DadosOperacao) returns (Transacao);
+  rpc Compra (DadosOperacao) returns (Transacao);
+  rpc Extrato (Vazio) returns (ListaDeTransacoes);
+}
