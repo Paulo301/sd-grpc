@@ -49,16 +49,74 @@ const client = new protoDescriptor.ServicoBancario("127.0.0.1:50051", grpc.crede
 //     console.log(transacao.data);
 // });
 
-client.Extrato({ }, (err, response) => {
-    const transacoes = response.transacoes;
+// client.Extrato({ }, (err, response) => {
+//     const transacoes = response.transacoes;
 
-    console.log("Extrato");
+//     console.log("Extrato");
 
-    for(i = 0; i < transacoes.length; i++){
-        const transacao = transacoes[i];
+//     for(i = 0; i < transacoes.length; i++){
+//         const transacao = transacoes[i];
 
-        console.log(`${transacao.codigo} ${transacao.descricao}\t${transacao.data}  ${transacao.valor}`)
-    }
+//         console.log(`${transacao.codigo} ${transacao.descricao}\t${transacao.data}  ${transacao.valor}`)
+//     }
 
-    console.log("Fim");
-})
+//     console.log("Fim");
+// });
+
+// client.Transferencia({
+//     valor: 150.0,
+//     nomeCaixa: "Caixa SD",
+//     codigoConta: 123
+// }, (err, response) => {
+//     const transacao = response;
+
+//     console.log("Operacao de transferência realizada.")
+
+//     console.log(transacao.codigo);
+//     console.log(transacao.valor);
+//     console.log(transacao.descricao);
+//     console.log(transacao.data);
+// });
+
+// client.Transferencia({
+//     valor: -1500.0,
+//     nomeCaixa: "Caixa SD",
+//     codigoConta: 124
+// }, (err, response) => {
+//     const transacao = response;
+
+//     console.log("Operacao de transferência realizada.")
+
+//     console.log(transacao.codigo);
+//     console.log(transacao.valor);
+//     console.log(transacao.descricao);
+//     console.log(transacao.data);
+// });
+
+// client.Compra({
+//     valor: 900.0,
+//     nomeEstabelecimento: "Supermercado"
+// }, (err, response) => {
+//     const transacao = response;
+
+//     console.log("Operacao de compra realizada.")
+
+//     console.log(transacao.codigo);
+//     console.log(transacao.valor);
+//     console.log(transacao.descricao);
+//     console.log(transacao.data);
+// });
+
+client.Compra({
+    valor: 1500.0,
+    nomeEstabelecimento: "Supermercado"
+}, (err, response) => {
+    const transacao = response;
+
+    console.log("Operacao de compra realizada.")
+
+    console.log(transacao.codigo);
+    console.log(transacao.valor);
+    console.log(transacao.descricao);
+    console.log(transacao.data);
+});
